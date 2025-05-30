@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Box</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="burger" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="../index.html">home page</a></li>
+    <li><a href="./pages/films.html">films</a></li>
+    <li><a href="frameset/frameset.html">kinky gerlinky</a></li>
+    <li><a href="prints.html">prints</a></li>
+    <li><a href="photos.html">photos</a></li>
+    <li><a href="found-photos.html">found photos</a></li>
+    <li><a href="the-box.html">the box</a></li>
+    <li><a href="books.html">books</a></li>
+    <li><a href="commercial.html">commercial</a></li>
+    <li><a href="montages.html">montages</a></li>
+    <li><a href="jewell/jewells.htm">Jewells</a></li>
+    <li><a href="shows.html">shows</a></li>
+    <li><a href="https://www.dobedorepresents.com/artists/dick-jewell/" target="_blank">contact me</a></li>
+  </ul>
+  <div class="scroll-finger">
+    <img src="../images/arrows-etc/point-up.jpg" alt="Scroll cue" />
+  </div>
+</nav>
+
+<main class="photo-page">
+  <h1 class="page-title" style="margin-top: 1.5em;">The Box</h1>
+  <p class="intro">Below are 55 photos from 2000 taken from 1 week's television
+    Monday 12th May -Sunday 18th May 1980</p>
+
+  <section class="photo-carousel the-box">
+    <button class="carousel-btn prev" aria-label="Previous image">
+      <img src="../images/arrows-etc/point-back.jpg" alt="Back">
+    </button>
+
+    <div class="carousel-frame">
+      <img id="carouselImage" src="../images/the-box/carousel/1-val.jpg" alt="Carousel Image">
+    </div>
+
+    <button class="carousel-btn next" aria-label="Next image">
+      <img src="../images/arrows-etc/point-forward.jpg" alt="Next">
+    </button>
+  </section>
+
+        
+    <figure class="print-item box-hamburg">
+      <img src="../images/the-box/_-der-kasten-1985.jpg" alt="der kasten hambury the box" />
+      <figcaption>The Box (Der Kasten) Hamburg 1985</figcaption>
+    </figure>
+
+</main>
+
+<footer class="footer-note">
+  <p>© Dick Jewell</p>
+</footer>
+
+
+<script>
+    const images = [
+        "../images/the-box/carousel/2.jpg",
+        "../images/the-box/carousel/3.jpg",
+        "../images/the-box/carousel/4.jpg",
+        "../images/the-box/carousel/5.jpg",
+        "../images/the-box/carousel/6.jpg",
+        "../images/the-box/carousel/7.jpg",
+        "../images/the-box/carousel/2.jpg",
+        "../images/the-box/carousel/8-Songs-of-Praise.jpg",
+        "../images/the-box/carousel/9-Lena.jpg",
+        "../images/the-box/carousel/10.thatcher.jpg",
+        "../images/the-box/carousel/11.hazel.jpg",
+        "../images/the-box/carousel/12.jpg",
+        "../images/the-box/carousel/13.sandra.jpg",
+        "../images/the-box/carousel/14.sale.jpg",
+        "../images/the-box/carousel/15.bounty-2.jpg",
+        "../images/the-box/carousel/16.sale-2.jpg",
+        "../images/the-box/carousel/17.bounty.jpg",
+        "../images/the-box/carousel/18.muppet.jpg",
+        "../images/the-box/carousel/19.jack-d.jpg",
+        "../images/the-box/carousel/20.thames2.jpg",
+        "../images/the-box/carousel/21.play-school.jpg",
+        "../images/the-box/carousel/22.thames.jpg",
+        "../images/the-box/carousel/23.dali.jpg",
+        "../images/the-box/carousel/24.jpg",
+        "../images/the-box/carousel/25.dead-cat.jpg",
+        "../images/the-box/carousel/26.news2.jpg",
+        "../images/the-box/carousel/27.news1.jpg",
+        "../images/the-box/carousel/28.wellings.jpg",
+        "../images/the-box/carousel/29.-athletics.jpg",
+        "../images/the-box/carousel/30.-Michael-fish.jpg",
+        "../images/the-box/carousel/31.reg.jpg",
+        "../images/the-box/carousel/32.anna.jpg",
+        "../images/the-box/carousel/33.puppet.jpg",
+        "../images/the-box/carousel/34.choc.jpg",
+        "../images/the-box/carousel/35.drifter.jpg",
+        "../images/the-box/carousel/36.quick-tips.jpg",
+        "../images/the-box/carousel/37.toys.jpg",
+        "../images/the-box/carousel/38.bees.jpg",
+        "../images/the-box/carousel/39.golf.jpg",
+        "../images/the-box/carousel/40.leader-board.jpg",
+        "../images/the-box/carousel/41.liza-g.jpg",
+        "../images/the-box/carousel/42.superman.jpg",
+        "../images/the-box/carousel/43.pitstop.jpg",
+        "../images/the-box/carousel/44.jpg",
+        "../images/the-box/carousel/45.bovril.jpg",
+        "../images/the-box/carousel/46.peter.jpg",
+        "../images/the-box/carousel/47.peter-(white-tie).jpg",
+        "../images/the-box/carousel/48.newbury.jpg",
+        "../images/the-box/carousel/49.isla.jpg",
+        "../images/the-box/carousel/50.miss-world.jpg",
+        "../images/the-box/carousel/51.loren.jpg",
+        "../images/the-box/carousel/53.towels.jpg",
+        "../images/the-box/carousel/54.spliffing.jpg",
+        "../images/the-box/carousel/55.sleep-acting.jpg",
+    ];
+  
+    let index = 0;
+    const carouselImage = document.getElementById('carouselImage');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+  
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % images.length;
+      carouselImage.src = images[index];
+    });
+  
+    prevBtn.addEventListener('click', () => {
+      index = (index - 1 + images.length) % images.length;
+      carouselImage.src = images[index];
+    });
+</script>
+</body>
+</html>

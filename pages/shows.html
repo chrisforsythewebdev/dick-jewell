@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shows – Dick Jewell</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    .shows-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .show {
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    .show h2 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .carousel-image {
+      min-width: 100%;
+      height: auto;
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+    }
+
+    .carousel-controls button {
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    .caption {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="burger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index.html">home page</a></li>
+        <li><a href="./pages/films.html">films</a></li>
+        <li><a href="frameset/frameset.html">kinky gerlinky</a></li>
+        <li><a href="prints.html">prints</a></li>
+        <li><a href="photos.html">photos</a></li>
+        <li><a href="found-photos.html">found photos</a></li>
+        <li><a href="the-box.html">the box</a></li>
+        <li><a href="books.html">books</a></li>
+        <li><a href="commercial.html">commercial</a></li>
+        <li><a href="montages.html">montages</a></li>
+        <li><a href="jewell/jewells.htm">Jewells</a></li>
+        <li><a href="shows.html">shows</a></li>
+        <li><a href="https://www.dobedorepresents.com/artists/dick-jewell/" target="_blank">contact me</a></li>
+      </ul>
+      <div class="scroll-finger">
+        <img src="../images/arrows-etc/point-up.jpg" alt="Scroll cue" />
+      </div>  </nav>
+
+  <main class="shows-section">
+    <h1 class="page-title">Selected Shows</h1>
+
+    <!-- Existing Tokyo and London 2008 sections stay here -->
+
+    <section class="show" id="london-2010">
+      <h2>LONDON 2010</h2>
+      <div class="carousel" data-carousel>
+        <div class="carousel-track">
+          <img src="../images/shows/london2010/EEP-press-invite.jpg" alt="Royal Show Invite" class="carousel-image">
+          <img src="../images/shows/london2010/E E P,arriving.jpg" alt="Viewer at show" class="carousel-image">
+          <img src="../images/shows/london2010/E-E P,--WH-Skins.jpg" alt="Viewer at show" class="carousel-image">
+          <img src="../images/shows/london2010/E-E-P-paul,me,swifty.jpg" alt="Viewer at show" class="carousel-image">
+
+        </div>
+        <div class="carousel-controls">
+          <button data-prev>&laquo;</button>
+          <button data-next>&raquo;</button>
+        </div>
+        <p class="caption">Images from the Royal London 2010 exhibition</p>
+      </div>
+    </section>
+
+    <section class="show" id="london-2011">
+      <h2>LONDON 2011</h2>
+      <div class="carousel" data-carousel>
+        <div class="carousel-track">
+          <img src="shows/London-2011/Flowers-invite.jpg" alt="Flowers Invite" class="carousel-image">
+          <img src="shows/London-2011/Flowers-install.jpg" alt="Flowers Installation" class="carousel-image">
+        </div>
+        <div class="carousel-controls">
+          <button data-prev>&laquo;</button>
+          <button data-next>&raquo;</button>
+        </div>
+        <p class="caption">Exhibition at Flowers Gallery, London 2011</p>
+      </div>
+    </section>
+
+    <section class="show" id="hangzhou-2016">
+      <h2>HANGZHOU 2016</h2>
+      <div class="carousel" data-carousel>
+        <div class="carousel-track">
+          <img src="shows/Hangzhou-2016/hangzhou-poster.jpg" alt="Hangzhou Poster" class="carousel-image">
+          <img src="shows/Hangzhou-2016/hangzhou-people.jpg" alt="Crowd at Show" class="carousel-image">
+        </div>
+        <div class="carousel-controls">
+          <button data-prev>&laquo;</button>
+          <button data-next>&raquo;</button>
+        </div>
+        <p class="caption">Images from the 2016 show in Hangzhou, China</p>
+      </div>
+    </section>
+
+    <section class="show" id="luton-2017">
+      <h2>LUTON 2017</h2>
+      <div class="carousel" data-carousel>
+        <div class="carousel-track">
+          <img src="shows/Luton-2017/Luton-poster.jpg" alt="Luton Poster" class="carousel-image">
+          <img src="shows/Luton-2017/Luton-gallery.jpg" alt="Gallery Installation" class="carousel-image">
+        </div>
+        <div class="carousel-controls">
+          <button data-prev>&laquo;</button>
+          <button data-next>&raquo;</button>
+        </div>
+        <p class="caption">Images from Luton show at Hat Factory Arts Centre</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-note">
+    <p>&copy; Dick Jewell</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('[data-carousel]').forEach(carousel => {
+      const track = carousel.querySelector('.carousel-track');
+      const prevBtn = carousel.querySelector('[data-prev]');
+      const nextBtn = carousel.querySelector('[data-next]');
+      let index = 0;
+      const total = track.children.length;
+
+      function updateCarousel() {
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      prevBtn.addEventListener('click', () => {
+        index = (index - 1 + total) % total;
+        updateCarousel();
+      });
+
+      nextBtn.addEventListener('click', () => {
+        index = (index + 1) % total;
+        updateCarousel();
+      });
+    });
+  </script>
+</body>
+</html>
