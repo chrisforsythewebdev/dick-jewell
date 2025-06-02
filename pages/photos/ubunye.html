@@ -4,55 +4,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ubunye Ndlmnyama + Woza Sikolethu</title>
+  <link rel="stylesheet" href="../../css/styles.css" />
   <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
+    .video-page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
       text-align: center;
-      padding: 2rem;
-      background-color: #fff;
-      color: #000;
     }
 
-    video {
-      width: 334px;
-      height: 274px;
-      max-width: 100%;
+    .video-page h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: normal;
+    .video-wrapper {
+      position: relative;
+      padding-top: 56.25%;
+      margin: 2rem 0;
     }
 
-    .back-link {
-      margin-bottom: 2rem;
-      display: inline-block;
-      font-size: 1rem;
-      text-decoration: underline;
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
 
-    .description {
-      max-width: 600px;
-      margin: 2rem auto;
+    .video-page p {
       font-size: 0.95rem;
+      margin: 1rem 0;
+    }
+
+    .back-links {
+      margin-top: 2rem;
+    }
+
+    .back-links a {
+      display: inline-block;
+      margin: 0 0.75rem;
+      text-decoration: underline;
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="burger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../../index.html">home page</a></li>
+      <li><a href="../films.html">films</a></li>
+      <li><a href="../frameset/frameset.html">kinky gerlinky</a></li>
+      <li><a href="../prints.html">prints</a></li>
+      <li><a href="../photos.html">photos</a></li>
+      <li><a href="../found-photos.html">found photos</a></li>
+      <li><a href="../the-box.html">the box</a></li>
+      <li><a href="../books.html">books</a></li>
+      <li><a href="../commercial.html">commercial</a></li>
+      <li><a href="../montages.html">montages</a></li>
+      <li><a href="../jewells.html">Jewells</a></li>
+      <li><a href="../shows.html">shows</a></li>
+      <li><a href="https://www.dobedorepresents.com/artists/dick-jewell/" target="_blank">contact me</a></li>
+    </ul>
+    <div class="scroll-finger">
+      <img src="../../images/arrows-etc/point-up.jpg" alt="Scroll cue" />
+    </div>
+  </nav>
 
-  <a class="back-link" href="../photos.html">Back to photos</a>
+  <main class="video-page">
+    <h1>Ubunye Ndlmnyama + Woza Sikolethu <br>19min 20sec / Dick Jewell 1996</h1>
 
-  <h2><span class="style2">Ubunye Ndlmnyama</span> + <strong>Woza Sikolethu</strong><br>19min 20sec / Dick Jewell 1996</h2>
+    <div class="video-wrapper">
+      <iframe 
+        src="https://player.vimeo.com/video/189067785?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        title="Ubunye Ndlmnyama + Woza Sikolethu">
+      </iframe>
+    </div>
 
-  <video controls>
-    <source src="../../videos/Ubunye-web3.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+    <p><strong>Ubunye Ndlmnyama</strong> + <strong>Woza Sikolethu</strong> (extract)</p>
+    <p>Shot in Durban, RSA having been introduced to the troupe by Madala Kunene aka Baffo.</p>
 
-  <h3>Ubunye Ndlmnyama + Woza Sikolethu (extract)</h3>
+    <div class="back-links">
+      <a href="../films.html">← back to films</a>
+      <a href="../photos.html">← back to photos</a>
+    </div>
+  </main>
 
-  <p class="description">
-    <strong>Ubunye Ndlmnyama</strong> + <strong>Woza Sikolethu</strong> was shot in Durban, RSA having been introduced to the troupe by Madala Kunene aka Baffo.
-  </p>
-
+  <footer class="footer-note">
+    <p>© Dick Jewell</p>
+  </footer>
 </body>
 </html>
