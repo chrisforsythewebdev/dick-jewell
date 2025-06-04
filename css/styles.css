@@ -188,7 +188,7 @@ body {
   
   .scroll-finger {
     position: absolute;
-    bottom: -70px; /* Adjust to be just below navbar */
+    bottom: -70px; 
     left: 0;
     width: 40px;
     animation: fingerScroll 6s linear infinite;
@@ -205,6 +205,12 @@ body {
     0%   { left: 0; }
     50%  { left: calc(100% - 40px); }
     100% { left: 0; }
+  }
+
+  @media (max-width: 768px) {
+    .scroll-finger {
+      display: none;
+    }
   }
   
 
