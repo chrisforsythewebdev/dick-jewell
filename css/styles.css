@@ -5,6 +5,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
+    overflow-x: hidden;
   }
   
   .navbar {
@@ -290,6 +291,24 @@ body {
     text-decoration: underline;
   }
 
+  /* Mobile-only image sizing */
+@media (max-width: 768px) {
+  .film-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .film-card {
+    max-width: 100%;
+  }
+
+  .hover-image .hover-img {
+    display: none; /* Optional: hides hover image on mobile if it's causing layout issues */
+  }
+}
+
+
   /* KG PAGE */
   .frameset-top img {
     max-width: 100%;
@@ -480,6 +499,17 @@ body {
     color: blue;
     text-decoration: underline;
   }
+  
+  @media (max-width: 768px) {
+    .dvd-purchase-options {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .dvd-option {
+      margin: 0 auto;
+    }
+  }  
   
   .trailer-video {
     flex: 1;
