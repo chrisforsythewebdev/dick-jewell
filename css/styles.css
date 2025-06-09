@@ -727,6 +727,7 @@ body {
   
   .photo-carousel {
     display: flex;
+    flex-direction: column; /* Stack vertically */
     align-items: center;
     justify-content: center;
     margin: 2rem auto;
@@ -743,6 +744,26 @@ body {
     padding: 10px;
     background-color: #fff;
   }
+
+  .carousel-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .carousel-btn img {
+    width: 70px;
+    height: auto;
+  }
+
+
+  .carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 350px; 
+  }
+
   
   .books .carousel-frame {
     width: 800px;
@@ -783,18 +804,6 @@ body {
     height: 600px;
   }
 
-  .carousel-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-  }
-  
-  .carousel-btn img {
-    width: 50px;
-    height: auto;
-  }
-  
   .box-hamburg img {
     margin-top: 1em;
     width: 675px;
@@ -817,7 +826,12 @@ body {
     }
   
     .carousel-btn img {
-      width: 40px;
+      width: 60px;
+    }
+
+    .carousel-controls {
+      display: flex;
+      width: 300px; 
     }
   }
 
@@ -927,10 +941,9 @@ figcaption {
   }
 }
 
-/* Optional: consistent image heights without cropping */
 .media-block img {
   max-height: 320px;
-  object-fit: contain; /* avoids cropping */
+  object-fit: contain; 
 }
 
 .essay-content {
@@ -938,6 +951,7 @@ figcaption {
   flex-direction: column;
   max-width: fit-content;
   margin: auto;
+  padding: 2em;
 }
 
 .video-block iframe {
@@ -1027,6 +1041,20 @@ figcaption {
   margin-top: 2rem;
 }
 
+@media (max-width: 768px) {
+  .mini-gallery {
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .mini-gallery .top-row img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+
 .top-row,
 .bottom-row {
   display: flex;
@@ -1063,9 +1091,33 @@ video {
   margin: 0 auto;
   object-fit: contain;
 }
+
 .carousel-track a {
   display: contents;
 }
+
+.book-carousel .carousel-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.book-carousel .carousel-caption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-width: 100%;
+}
+
+.book-carousel #carouselImage {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 
 .intro {
   max-width: 1000px;
