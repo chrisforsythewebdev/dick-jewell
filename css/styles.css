@@ -642,6 +642,38 @@ body {
     }
   }
   
+
+  @media (max-width: 768px) {
+
+    .print-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  
+    .print-item figcaption {
+      padding: 0 1rem;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .print-item {
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+  
+    .hover-wrapper {
+      width: 100%;
+    }
+  
+    .hover-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+  
   .print-detail img {
     max-width: 100%;
     height: auto;
@@ -675,7 +707,24 @@ body {
     max-width: 90%;
   }
   
-
+  @media (max-width: 768px) {
+    .print-detail img {
+      max-width: 100vw;
+      padding: 0;
+      margin: 0 auto;
+      display: block;
+    }
+  
+    .print-detail {
+      padding: 0 1rem; /* adjust if needed */
+    }
+  
+    .print-detail figcaption {
+      font-size: 1.1rem;
+      text-align: center;
+    }
+  }
+  
   .photo-carousel {
     display: flex;
     align-items: center;
