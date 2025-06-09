@@ -12,17 +12,26 @@
       margin: 0;
       padding: 2rem;
       text-align: center;
+      box-sizing: border-box;
+      max-width: 100vw;
+      overflow-x: hidden;
     }
 
     .review-image {
-      max-width: 100%;
-      height: auto;
       display: none;
       margin-bottom: 1rem;
     }
 
     .review-image.active {
       display: block;
+    }
+
+    .review-image img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
     }
 
     .nav-btn {
@@ -35,12 +44,12 @@
       text-transform: uppercase;
       cursor: pointer;
       border: none;
-      margin: 1rem;
+      margin: 1rem auto;
     }
 
     .nav-btn img {
       width: 56px;
-      height: 42px;
+      height: auto;
       margin-left: 0.5rem;
     }
 
@@ -52,31 +61,31 @@
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="burger" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <ul class="nav-links">
-          <li><a href="../../index.html">home page</a></li>
-          <li><a href="./pages/films.html">films</a></li>
-          <li><a href="Frameset.html">kinky gerlinky</a></li>
-          <li><a href="../prints.html">prints</a></li>
-          <li><a href="../photos.html">photos</a></li>
-          <li><a href="../found-photos.html">found photos</a></li>
-          <li><a href="../the-box.html">the box</a></li>
-          <li><a href="../books.html">books</a></li>
-          <li><a href="../commercial.html">commercial</a></li>
-          <li><a href="../montages.html">montages</a></li>
-          <li><a href="../jewells.html">jewells</a></li>
-          <li><a href="../shows.html">shows</a></li>
-          <li><a href="https://www.dobedorepresents.com/artists/dick-jewell/" target="_blank">contact me</a></li>
-        </ul>
-        <div class="scroll-finger">
-            <img src="../../images/arrows-etc/point-up.jpg" alt="Scroll cue" />
-        </div>
-    </nav>
+  <nav class="navbar">
+    <div class="burger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../../index.html">home page</a></li>
+      <li><a href="./pages/films.html">films</a></li>
+      <li><a href="Frameset.html">kinky gerlinky</a></li>
+      <li><a href="../prints.html">prints</a></li>
+      <li><a href="../photos.html">photos</a></li>
+      <li><a href="../found-photos.html">found photos</a></li>
+      <li><a href="../the-box.html">the box</a></li>
+      <li><a href="../books.html">books</a></li>
+      <li><a href="../commercial.html">commercial</a></li>
+      <li><a href="../montages.html">montages</a></li>
+      <li><a href="../jewells.html">jewells</a></li>
+      <li><a href="../shows.html">shows</a></li>
+      <li><a href="https://www.dobedorepresents.com/artists/dick-jewell/" target="_blank">contact me</a></li>
+    </ul>
+    <div class="scroll-finger">
+      <img src="../../images/arrows-etc/point-up.jpg" alt="Scroll cue" />
+    </div>
+  </nav>
 
   <section class="frameset-top" style="text-align: center;">
     <img src="../../images/KG/PINK-KINK.jpg" alt="Kinky Gerlinky Banner" width="655" height="117" />
@@ -107,13 +116,12 @@
     <div class="caption">Raindance Film Festival Catalogue, 2003</div>
   </div>
 
-
   <script>
     let current = 1;
     const button = document.querySelector('.nav-btn');
     const r1 = document.getElementById("review1");
     const r2 = document.getElementById("review2");
-  
+
     function toggleReview() {
       if (current === 1) {
         r1.classList.remove("active");
@@ -128,8 +136,7 @@
       }
     }
   </script>
-  
-  <script src="../../js/index.js"></script>
 
+  <script src="../../js/index.js"></script>
 </body>
 </html>
