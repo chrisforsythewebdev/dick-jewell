@@ -18,14 +18,19 @@
       margin-bottom: 1rem;
     }
 
-    .video-page video,
-    .video-page img {
+    .video-wrapper {
+      position: relative;
+      padding-top: 56.25%;
+      margin: 2rem 0;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      max-width: 668px;
-      height: auto;
+      height: 100%;
       border-radius: 4px;
-      margin: 1rem auto;
-      display: block;
     }
 
     .video-page p {
@@ -44,14 +49,23 @@
       display: inline-block;
       font-weight: bold;
     }
+
+    @media (max-width: 768px) {
+      .video-page {
+        padding: 1rem;
+        max-width: 100%;
+      }
+
+      .video-wrapper {
+        padding-top: 75%;
+      }
+    }
   </style>
 </head>
 <body>
   <nav class="navbar">
     <div class="burger" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
     <ul class="nav-links">
       <li><a href="../../index.html">home page</a></li>
@@ -76,13 +90,19 @@
   <main class="video-page">
     <h1>Headcases</h1>
 
-    <video controls>
-      <source src="movie folder/HC Titles.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <div class="video-wrapper">
+      <iframe 
+        src="https://player.vimeo.com/video/189385177" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen 
+        title="Headcases">
+      </iframe>
+    </div>
+
     <p class="caption">This is the title sequence</p>
 
-    <p><strong>Headcases</strong> shot on Super 8 in 1989, 60min per episode documentaries featuring:</p>
+    <p><strong>Headcases</strong> shot on Super 8 in 1989, 60 min per episode documentaries featuring:</p>
     <p>
       Leigh Bowery, Neneh Cherry, Lynne Franks, Rachel Auburn, John Maybury, Kathy Acker, Nicola Bateman, Tom Dixon, Dave Baby,
       M.C.Kinky, Kenny McDonald, Andrea Oliver, Mark Lebon, Cindy, Richard Torré, Joe Corré, Barnsley, Anna, Poodle,
@@ -92,12 +112,12 @@
     <a href="headcases/rachel.html">
       <img src="../../images/films/HC Rachel.jpg" alt="Rachel Auburn" />
     </a>
-    <p class="caption">Then the film runs with a sequence like this for each 'Headcase' (click on image above to run this clip of Rachel Auburn)</p>
+    <p class="caption">Then the film runs with a sequence like this for each 'Headcase' (click image above to run the Rachel Auburn clip)</p>
 
     <a href="headcases/vox.html">
       <img src="../../images/films/HC Andrea.jpg" alt="Andrea Oliver" />
     </a>
-    <p class="caption">Each pair of 'Headcases' are separated by a Vox Pop sequence (click on image above to run this one to “Are you religious, what do you believe in?”)</p>
+    <p class="caption">Each pair of 'Headcases' are separated by a Vox Pop sequence (click image above to run “Are you religious?”)</p>
 
     <a href="../films.html" class="back-link">← back to films</a>
   </main>
@@ -106,6 +126,5 @@
     <p>© Dick Jewell</p>
   </footer>
   <script src="../../js/index.js"></script>
-
 </body>
 </html>

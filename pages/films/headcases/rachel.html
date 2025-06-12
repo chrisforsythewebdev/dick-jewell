@@ -7,40 +7,58 @@
   <link rel="stylesheet" href="../../../css/styles.css" />
   <style>
     .video-page {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 2rem 1rem;
       text-align: center;
     }
 
     .video-page h1 {
-      font-size: 1.6rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
     }
 
-    .video-page video {
+    .video-wrapper {
+      position: relative;
+      padding-top: 56.25%;
+      margin: 2rem 0;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      max-width: 691px;
-      height: auto;
-      margin: 1.5rem 0;
+      height: 100%;
       border-radius: 4px;
     }
 
     .video-page p {
       font-size: 0.95rem;
-      line-height: 1.6;
+      margin: 1rem 0;
     }
 
-    .back-links {
+    .video-page .caption {
+      font-style: italic;
+      font-size: 0.9rem;
       margin-bottom: 2rem;
-      font-weight: bold;
-      text-align: center;
     }
 
-    .back-links a {
-      display: block;
-      margin-bottom: 0.25rem;
-      text-decoration: underline;
+    .video-page .back-link {
+      margin-top: 2rem;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .video-page {
+        padding: 1rem;
+        max-width: 100%;
+      }
+
+      .video-wrapper {
+        padding-top: 75%;
+      }
     }
   </style>
 </head>
@@ -78,10 +96,15 @@
 
     <h1>Headcases (extract)</h1>
 
-    <video controls>
-      <source src="movie folder/HC Rachel.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <div class="video-wrapper">
+      <iframe 
+        src="https://player.vimeo.com/video/189385280" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture" 
+        allowfullscreen 
+        title="Rachel">
+      </iframe>
+    </div>
 
     <h2>Rachel Auburn</h2>
 
