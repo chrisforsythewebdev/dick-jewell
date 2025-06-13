@@ -20,10 +20,19 @@
       margin-bottom: 1rem;
     }
 
-    .video-page video {
-      width: 100%;
-      height: auto;
+    .video-wrapper {
+      position: relative;
+      padding-top: 56.25%;
       margin: 1.5rem 0;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
     }
 
     .video-caption {
@@ -36,6 +45,12 @@
       font-weight: bold;
       margin-bottom: 2rem;
     }
+
+    @media (max-width: 768px) {
+      .video-wrapper {
+        padding-top: 75%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -45,16 +60,22 @@
 
     <h1>Neneh Cherry – Buffalo Stance<br>Sukka Mix (Censored Version)</h1>
 
-    <video controls>
-      <source src="../../videos/sukka 999.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <div class="video-wrapper">
+      <iframe 
+        src="https://player.vimeo.com/video/172580902?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+        allowfullscreen 
+        title="Neneh Cherry – Buffalo Stance (Sukka Mix, Censored)">
+      </iframe>
+    </div>
 
     <p class="video-caption">
       "Buffalo Stance" – Give Me A Muthaf...ing Break Beat – Sukka Mix<br>
       12" Censored Version
     </p>
   </main>
+
   <script src="../../js/index.js"></script>
 
 </body>

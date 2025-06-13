@@ -18,16 +18,31 @@
       font-weight: bold;
     }
 
-    .video-page video {
-      width: 100%;
-      height: auto;
+    .video-wrapper {
+      position: relative;
+      padding-top: 56.25%; /* 16:9 aspect ratio */
       margin: 1rem 0;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
     }
 
     .back-link {
       font-weight: bold;
       display: inline-block;
       margin-bottom: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .video-wrapper {
+        padding-top: 75%;
+      }
     }
   </style>
 </head>
@@ -38,13 +53,19 @@
 
     <h1>Horace Andy and Massive Attack</h1>
 
-    <video controls>
-      <source src="../../videos/big wheel bigger.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <div class="video-wrapper">
+      <iframe 
+        src="https://player.vimeo.com/video/172565790?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+        allowfullscreen 
+        title="Horace Andy and Massive Attack – Hymn of the Big Wheel">
+      </iframe>
+    </div>
 
     <p><strong>Hymn of the Big Wheel</strong></p>
   </main>
+
   <script src="../../js/index.js"></script>
 
 </body>

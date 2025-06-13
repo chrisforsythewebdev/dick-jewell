@@ -12,30 +12,46 @@
       margin: 0;
       padding: 1em;
     }
+
     .container {
       max-width: 1200px;
       margin: 0 auto;
       text-align: center;
     }
+
     .video-wrapper {
+      position: relative;
+      padding-top: 56.25%;
       margin-top: 1em;
     }
-    video {
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: auto;
-      max-width: 100%;
+      height: 100%;
+      border-radius: 4px;
     }
+
     .caption {
       margin-top: 0.5em;
       font-size: 1rem;
       font-weight: bold;
     }
+
     a.back-link {
       display: inline-block;
       margin: 1em 0;
       font-weight: bold;
       text-decoration: none;
       color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .video-wrapper {
+        padding-top: 75%;
+      }
     }
   </style>
 </head>
@@ -46,12 +62,16 @@
     <h1>Poly Styrene Promo / Dick Jewell 2010</h1>
 
     <div class="video-wrapper">
-      <video controls>
-        <source src="../../videos/black 9999.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <div class="caption">Black Christmas</div>
+      <iframe 
+        src="https://player.vimeo.com/video/1089791408?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+        allowfullscreen 
+        title="Poly Styrene – Black Christmas">
+      </iframe>
     </div>
+
+    <div class="caption">Black Christmas</div>
   </div>
   <script src="../../js/index.js"></script>
 

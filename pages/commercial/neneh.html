@@ -19,10 +19,19 @@
       margin-bottom: 1rem;
     }
 
-    .video-page video {
-      width: 100%;
-      height: auto;
+    .video-wrapper {
+      position: relative;
+      padding-top: 56.25%;
       margin: 1rem 0;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 4px;
     }
 
     .video-caption {
@@ -35,6 +44,12 @@
       display: inline-block;
       margin-bottom: 2rem;
     }
+
+    @media (max-width: 768px) {
+      .video-wrapper {
+        padding-top: 75%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -44,14 +59,20 @@
 
     <h1>Neneh Cherry</h1>
 
-    <video controls>
-      <source src="../../videos/inner999.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <div class="video-wrapper">
+      <iframe 
+        src="https://player.vimeo.com/video/172565769?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+        frameborder="0" 
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+        allowfullscreen 
+        title="Neneh Cherry – Inner City Mamma">
+      </iframe>
+    </div>
 
     <p><strong>Inner City Mamma</strong></p>
     <p class="video-caption">(promo initially shot for "The Rise of Neneh Cherry" / Dick Jewell, 1991)</p>
   </main>
+
   <script src="../../js/index.js"></script>
 
 </body>
