@@ -348,7 +348,7 @@ body {
     padding: 0 20px;
   }
 
-  .kg-gallery {
+  /* .kg-gallery {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
@@ -374,14 +374,94 @@ body {
     font-size: 14px;
     color: #FF00CC;
     font-weight: bold;
+  } */
+  
+  .kg-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
   }
   
-  /* 2 columns on screens wider than 768px */
-  @media (min-width: 768px) {
-    .kg-gallery {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  /* gallery gets its own 2-column grid */
+  .kg-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
+  
+  .kg-gallery figure {
+    margin: 0;
+    text-align: center;
+  }
+  
+  .kg-gallery img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .kg-gallery figcaption {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #FF00CC;
+    font-weight: bold;
+  }
+  
+  .screenings {
+    text-align: center;
+    font-size: 14px;
+    align-self: start;
+  }
+  
+  /* .screenings img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  } */
+
+  .screenings img {
+    width: 270px; /* or whatever size looks right */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto; /* centers the image and adds spacing */
+  }
+  
+  .screenings h2 {
+    font-size: 18px;
+    color: #FF00CC;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .screenings h3 {
+    font-size: 12px;
+    color: #FF00CC;
+    margin-top: 20px;
+  }
+  
+  .screening-info {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  
+/* mobile responsive: stack gallery and screenings */
+@media (max-width: 768px) {
+  .kg-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .kg-gallery {
+    grid-template-columns: 1fr;
+  }
+}
   
 
   /* KG */
