@@ -8,12 +8,12 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
+      margin: auto;
       padding: 2rem;
       background: #fff;
       color: #000;
     }
-
+  
     h1 {
       text-align: center;
       font-size: 1.8rem;
@@ -21,54 +21,96 @@
       text-transform: uppercase;
     }
 
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }    
+  
     .intro {
       text-align: center;
       margin-bottom: 2rem;
       font-size: 0.8em;
     }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+  
+    .vhs-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 6rem;
+      width: 100%;
     }
-
+  
     .vhs-item {
-      padding: 1rem;
-      text-align: start;
+      flex: 1;
+      max-width: 100%;
+      height: 400px;
+      box-sizing: border-box;
     }
+  
+    .vhs-stills {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr); /* Mobile: 3 rows of 2 */
+      gap: 0.5rem;
+    }
+  
 
-    .vhs-item img {
+    .vhs-stills img {
       width: 100%;
       height: auto;
-      margin-bottom: 0.5rem;
+      object-fit: cover;
+      display: block;
+      max-width: 100%; 
     }
 
+  
+    @media (min-width: 768px) {
+      .vhs-block {
+        flex-direction: row;
+        align-items: stretch;
+        gap: 2rem;
+      }
+  
+      .vhs-item {
+        max-width: 300px;
+        /* height: 400px; */
+      }
+  
+      .vhs-stills {
+        grid-template-columns: repeat(3, 1fr); /* Desktop: 2 rows of 3 */
+        grid-template-rows: repeat(2, 1fr);
+      }
+    }
+  
     .vhs-item h2 {
       font-size: 1.1rem;
       margin: 0.5rem 0;
     }
-
+  
     .vhs-item p {
       margin: 0.02rem 0;
       font-size: 0.75rem;
       line-height: 1.2;
     }
-
+  
     .vhs-item em {
       display: block;
       margin-top: 0.5rem;
       font-style: italic;
     }
-
+  
     .intro h2 {
       font-size: 18px;
       color: #FF00CC;
       margin-top: 2em;
       margin-bottom: 0;
     }
-  
   </style>
+  
 </head>
 <body>
     <nav class="navbar">
@@ -79,7 +121,7 @@
         </div>
         <ul class="nav-links">
           <li><a href="../../index.html">home page</a></li>
-          <li><a href="./pages/films.html">films</a></li>
+          <li><a href="../films.html">films</a></li>
           <li><a href="Frameset.html">kinky gerlinky</a></li>
           <li><a href="../prints.html">prints</a></li>
           <li><a href="../photos.html">photos</a></li>
@@ -116,240 +158,523 @@
     <h2>Click images to be linked to 'Kinky Gerlinky' episode</h2>
   </div>
 
-  <div class="grid">
-    <!-- VHS items go here -->
-    <div class="vhs-item">
-      <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476040" target="_blank">
-        <img src="../../images/vhs/1-Vogue-Ball-thumb.jpg" alt="Vogue Ball">
-      </a>
-      <h2>Vogue Ball</h2>
-      <p><strong>22nd May 1990</strong><br>Café de Paris, 3 Coventry Street</p>
-      <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-      <p><em>Catwalk Show Categories:</em> Madonna Realness, Rio Showgirls, Hooker Lookers, Soap Stars of the TV World, Hollywood Babylon, Silicone Queens, Butch Queen First Time in Drag, Freak Drag, Femme Realness, Heavenly Bodies, Total Fashion Victims, Voguers</p>
-    </div>
-    <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476041" target="_blank">
-          <img src="../../images/vhs/2.-Halloween-Happening-!-th.jpg" alt="Halloween Happening">
-        </a>
-        <h2>Halloween Happening</h2>
-        <p><strong>31st October 1990</strong><br>Shaftesburys, 24 Shaftesbury Avenue</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>What brought a smile to Ivana Trump's face</em></p>
-      </div>
-      
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476042" target="_blank">
-          <img src="../../images/vhs/3.-Christmas-Party-thumb.jpg" alt="Christmas Party">
-        </a>
-        <h2>Christmas Party</h2>
-        <p><strong>13th December 1990</strong><br>Shatesburys, 24 Shatesbury Avenue</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Catwalk Show Categories:</em> Twinkle Twinkle Little Star (Christmas Fairies), Big Dick Whittingtons & Stocking Fillers, Snow Queens – Wicked Bitches On Ice, 3 Wise Queens, Hairdos & Don’ts</p>
-      </div>
-      
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476043" target="_blank">
-          <img src="../../images/vhs/4.-Kinky-Karnival-thumb.jpg" alt="Kinky Karnival">
-        </a>
-        <h2>Kinky Karnival</h2>
-        <p><strong>25th March 1991</strong><br>Empire Ballroom, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Performers:</em> Karen O'Conner, M.C.Kinky</p>
-      </div>
-      
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476046" target="_blank">
-          <img src="../../images/vhs/5.-Models-Ball-thumb.jpg" alt="Models Ball">
-        </a>
-        <h2>Models Ball</h2>
-        <p><strong>22nd April 1991</strong><br>Empire Ballroom, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Compered by:</em> Winston</p>
-        <p><em>Performers:</em> Sara Stockbridge, Boy George</p>
-        <p><em>Catwalk Show Categories:</em> GQ Models, Tom of Finland, Super Models Past & Present, Runway Models – Haute Couture, Glamour Models – Page 3, Wannabe Models</p>
-      </div>
-      
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476047" target="_blank">
-          <img src="../../images/vhs/6.-Second-Birthday-Party-th.jpg" alt="Carry On Kinky Gerlinky">
-        </a>
-        <h2>Carry On Kinky Gerlinky</h2>
-        <p><strong>10th June 1991</strong><br>Empire Ballroom, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Performers:</em> The Dairy Queen, Sheila Tequila, Maria Malapasta, Al Bolin, Stella Stein, Princess Julia, 3 Pleased Wimmin, Tasty Tim</p>
-        <p><em>Also featuring:</em> Connie, Dareena, Stephanie, Stella, Babs, Loretta, Mary, Vanessa, Dina B, Ms Cabaret</p>
-      </div>
 
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476048" target="_blank">
-          <img src="../../images/vhs/7.-Hot-Pants-Party-thumb.jpg" alt="Super Summer Hot Pants Party">
-        </a>
-        <h2>Super Summer Hot Pants Party</h2>
-        <p><strong>15th July 1991</strong><br>Empire Ballroom, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Compered by:</em> Winston</p>
-        <p><em>Performers:</em> West India Company, M.C.Kinky, Trindy 4</p>
-      </div>
-      
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476049" target="_blank">
-          <img src="../../images/vhs/8.-Dazzle-Ball-thumb.jpg" alt="Dazzle Ball">
-        </a>
-        <h2>Dazzle Ball</h2>
-        <p><strong>26th August 1991</strong><br>Empire Ballroom, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Compered by:</em> Winston</p>
-        <p><em>Performers:</em> Sheep On Drugs, Neneh Cherry, M.C.Kinky, Boy George, Nina Hagen, Sinead O'Connor, Nick Kamen, Martina Mega Climax, S Express</p>
-      </div>
-      
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476044" target="_blank">
-          <img src="../../images/vhs/9.-Label-Queens-thumb.jpg" alt="Label Queens">
-        </a>
-        <h2>Label Queens</h2>
-        <p><strong>10th October 1991</strong><br>Empire Ballroom, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Compered by:</em> Winston</p>
-        <p><em>Theme:</em> From Selfridge to Schiaparelli, Balenciaga to Boy</p>
-      </div>
-      
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476045" target="_blank">
-          <img src="../../images/vhs/10.-Exposed-!-thumb.jpg" alt="Exposed">
-        </a>
-        <h2>Exposed</h2>
-        <p><strong>11th November 1991</strong><br>Empire Ballroom, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Compered by:</em> Winston</p>
-        <p><em>Performers:</em> Cicero, Eve Gallagher, Ru Paul, Jayne County</p>
-      </div>
-      
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476050" target="_blank">
-          <img src="../../images/vhs/11.-Krazy-Kristmas-Kostume-.jpg" alt="Kinky Krazy Kristmas Kostume Ball">
-        </a>
-        <h2>Krazy Kristmas Kostume Ball</h2>
-        <p><strong>9th December 1991</strong><br>Empire Ballroom, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Compered by:</em> Winston</p>
-        <p><em>Performers:</em> Army Of Lovers, Yvette, Stella Stein, Martina Mega Climax, Sheila Tequila, Mirror Love, Wilfreida Beehive & The Hairnets, Maur Vallance, Trindy 6, Roy, David Cabaret, 300 Degrees, Pleased Wimmin</p>
-      </div>
+  <div class="container">
 
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476051" target="_blank">
-          <img src="../../images/vhs/12.-Night-Of-The-Leopards-t.jpg" alt="Night Of The Leopards">
-        </a>
-        <h2>Night Of The Leopards</h2>
-        <p><strong>20th January 1992</strong><br>Empire Ballroom, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Compered by:</em> Winston</p>
-        <p><em>Performers:</em> People Get Ready, Enerjenic, Pippa, M.C.Kinky, Sexposure</p>
-        <p><em>Catwalk Show Categories:</em> Amazon Women, Beast Master, Jungle Queen, Tarzan & Jane, Witch Doctors</p>
-      </div>
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476040" target="_blank">
+            <img src="../../images/vhs/1-Vogue-Ball-thumb.jpg" alt="Vogue Ball">
+          </a>
+          <h2>Vogue Ball</h2>
+          <p><strong>22nd May 1990</strong><br>Café de Paris, 3 Coventry Street</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Catwalk Show Categories:</em> Madonna Realness, Rio Showgirls, Hooker Lookers, Soap Stars of the TV World, Hollywood Babylon, Silicone Queens, Butch Queen First Time in Drag, Freak Drag, Femme Realness, Heavenly Bodies, Total Fashion Victims, Voguers
+          </p>
+          
+        </div>
       
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476052" target="_blank">
-          <img src="../../images/vhs/13.-Coach-Trip-To-Hacienda-.jpg" alt="Flesh Presents Kinky Gerlinky">
-        </a>
-        <h2>Flesh Presents Kinky Gerlinky</h2>
-        <p><strong>20th April 1992</strong><br>Fac 51 Haçienda, Manchester</p>
-        <p><em>DJ's:</em> Tim, Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Compered by:</em> Winston</p>
-        <p><em>Performers:</em> Maur Vallance, Sexposure, Sheila Tequila, Roy, 300 Degrees</p>
-        <p><em>Theme:</em> Serious exhibitionism for Dykes and Queers</p>
+        <div class="vhs-stills">
+          <img src="../../images/KG/01vogue/01 gerlinde3.jpg" alt="Vogue still 1">
+          <img src="../../images/KG/01vogue/02 gerlinde2.jpg" alt="Vogue still 2">
+          <img src="../../images/KG/01vogue/03 Tasty Tim.jpg" alt="Vogue still 3">
+          <img src="../../images/KG/01vogue/04 Darren .jpg" alt="Vogue still 4">
+          <img src="../../images/KG/01vogue/05 ROY.jpg" alt="Vogue still 5">
+          <img src="../../images/KG/01vogue/06 Rachel.jpg" alt="Vogue still 6">
+        </div>
       </div>
+    </section>
+    
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476041" target="_blank">
+            <img src="../../images/vhs/2.-Halloween-Happening-!-th.jpg" alt="Halloween Happening">
+          </a>
+          <h2>Halloween Happening</h2>
+          <p><strong>31st October 1990</strong><br>Shaftesburys, 24 Shaftesbury Avenue</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>What brought a smile to Ivana Trump's face</em></p>
+        </div>
       
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476053" target="_blank">
-          <img src="../../images/vhs/14-Carnival-Do-Brasil-thumb.jpg" alt="Carnaval Do Brasil 92">
-        </a>
-        <h2>Carnaval Do Brasil</h2>
-        <p><strong>1st June 1992</strong><br>Equinox Disco-Tec, Empire, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Compered by:</em> Winston</p>
-        <p><em>Performers:</em> Yes Brasil, London School Of Samba</p>
-        <p><em>Carnaval Catwalk Competition:</em> Best Carmen, Most Spectacular Headdress, Sexiest Costume, Bandas (teams, groups or more)</p>
+        <div class="vhs-stills">
+          <img src="../../images/KG/02HalloweenBall/01 Witch and Transformer Halloween.jpg" alt="Halloween still 1">
+          <img src="../../images/KG/02HalloweenBall/02 Pleased Women.jpg" alt="Halloween still 2">
+          <img src="../../images/KG/02HalloweenBall/03 Philip Salon2.jpg" alt="Halloween still 3">
+          <img src="../../images/KG/02HalloweenBall/04 Lawrence and Dean .jpg" alt="Halloween still 4">
+          <img src="../../images/KG/02HalloweenBall/05 Voguer.jpg" alt="Halloween still 5">
+          <img src="../../images/KG/02HalloweenBall/06 Martin and Caron .jpg" alt="Halloween still 6">
+        </div>
       </div>
+    </section>
+
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476042" target="_blank">
+            <img src="../../images/vhs/3.-Christmas-Party-thumb.jpg" alt="Christmas Party">
+          </a>
+          <h2>Christmas Party</h2>
+          <p><strong>13th December 1990</strong><br>Shaftesburys, 24 Shaftesbury Avenue</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Catwalk Show Categories:</em> Twinkle Twinkle Little Star (Christmas Fairies), Big Dick Whittingtons & Stocking Fillers, Snow Queens – Wicked Bitches On Ice, 3 Wise Queens, Hairdos & Don’ts</p>
+        </div>
       
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476054" target="_blank">
-          <img src="../../images/vhs/15.Groovy-Garden-Party-thum.jpg" alt="Kinky's Groovy Garden Party">
-        </a>
-        <h2>Kinky's Groovy Garden Party</h2>
-        <p><strong>20th July 1992</strong><br>Equinox Disco-Tec, Empire, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Compered by:</em> Winston</p>
-        <p><em>Performers:</em> Love and Sass, Paradise Blue, Bananarama, So Damned Tuff, Powder Puff & Lip Gloss</p>
+        <div class="vhs-stills">
+          <img src="../../images/KG/03 christmas party jpgs copy/01 Winston.jpg" alt="Christmas still 1">
+          <img src="../../images/KG/03 christmas party jpgs copy/02 Christmas tree.jpg" alt="Christmas still 2">
+          <img src="../../images/KG/03 christmas party jpgs copy/03 Nicola and David Cabaret.jpg" alt="Christmas still 3">
+          <img src="../../images/KG/03 christmas party jpgs copy/04 Leigh Bowery.jpg" alt="Christmas still 4">
+          <img src="../../images/KG/03 christmas party jpgs copy/05 Sheila and Pippa 2.jpg" alt="Christmas still 5">
+          <img src="../../images/KG/03 christmas party jpgs copy/06 Caron with George and Tony.jpg" alt="Christmas still 6">
+        </div>
       </div>
+    </section>
       
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476055" target="_blank">
-          <img src="../../images/vhs/16.-Night-Of--A-1000-Stars-.jpg" alt="Night Of A Thousand Stars">
-        </a>
-        <h2>Night Of A Thousand Stars</h2>
-        <p><strong>31st August 1992</strong><br>Equinox Disco-Tec, Empire, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Compered by:</em> Winston</p>
-        <p><em>Performers:</em> M.C.Kinky, Adamski, Boy George, Amanda Lear, Madame JoJo</p>
-      </div>
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476043" target="_blank">
+            <img src="../../images/vhs/4.-Kinky-Karnival-thumb.jpg" alt="Kinky Karnival">
+          </a>
+          <h2>Kinky Karnival</h2>
+          <p><strong>25th March 1991</strong><br>Empire Ballroom, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Performers:</em> Karen O'Conner, M.C.Kinky</p>
+        </div>
       
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476056" target="_blank">
-          <img src="../../images/vhs/17.-Sleaze-Ball-thumb.jpg" alt="Sleaze Ball">
-        </a>
-        <h2>Sleaze Ball</h2>
-        <p><strong>28th September 1992</strong><br>Equinox Disco-Tec, Empire, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Compered by:</em> Stella Stein</p>
-        <p><em>Performers:</em> Jayne County, Melonie Peel, Martina Mega Climax & The Hoarettes, Roy & Miss Manning, Jimmy Trindy & Lisa, Leigh Bowery</p>
+        <div class="vhs-stills">
+          <img src="../../images/KG/04 Kinky Karnival jpgs copy/01 Karen O_Conner.jpg" alt="Kinky Karnival still 1">
+          <img src="../../images/KG/04 Kinky Karnival jpgs copy/02 MC Kinky.jpg" alt="Kinky Karnival still 2">
+          <img src="../../images/KG/04 Kinky Karnival jpgs copy/03 Transformer.jpg" alt="Kinky Karnival still 3">
+          <img src="../../images/KG/04 Kinky Karnival jpgs copy/04 Leigh Bowery.jpg" alt="Kinky Karnival still 4">
+          <img src="../../images/KG/04 Kinky Karnival jpgs copy/05 Gerlinda and Ulla.jpg" alt="Kinky Karnival still 5">
+          <img src="../../images/KG/04 Kinky Karnival jpgs copy/06 Protest against Burger King.jpg" alt="Kinky Karnival still 6">
+        </div>
       </div>
+    </section>
+
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476046" target="_blank">
+            <img src="../../images/vhs/5.-Models-Ball-thumb.jpg" alt="Models Ball">
+          </a>
+          <h2>Models Ball</h2>
+          <p><strong>22nd April 1991</strong><br>Empire Ballroom, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Compered by:</em> Winston</p>
+          <p><em>Performers:</em> Sara Stockbridge, Boy George</p>
+          <p><em>Catwalk Show Categories:</em> GQ Models, Tom of Finland, Super Models Past & Present, Runway Models – Haute Couture, Glamour Models – Page 3, Wannabe Models</p>
+        </div>
       
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476057" target="_blank">
-          <img src="../../images/vhs/18.-World-Fair-thumb.jpg" alt="World Fair">
-        </a>
-        <h2>World Fair</h2>
-        <p><strong>9th November 1992</strong><br>Equinox Disco-Tec, Empire, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Compered by:</em> Winston</p>
-        <p><em>Theme:</em> Parade Of Nations Catwalk Competition</p>
-        <p><em>Description:</em> Savage pageantry… entirely unstaged and unrehearsed. You must believe your eyes — incredible as it may seem.</p>
+        <div class="vhs-stills">
+          <img src="../../images/KG/05modelsball/01 Gerlinde.jpg" alt="Models Ball still 1">
+          <img src="../../images/KG/05modelsball/02 sara stockbridge.jpg" alt="Models Ball still 2">
+          <img src="../../images/KG/05modelsball/03 George.jpg" alt="Models Ball still 3">
+          <img src="../../images/KG/05modelsball/04 Vivienne & Winston.jpg" alt="Models Ball still 4">
+          <img src="../../images/KG/05modelsball/05 Leigh & Space .jpg" alt="Models Ball still 5">
+          <img src="../../images/KG/05modelsball/06 Lee .jpg" alt="Models Ball still 6">
+        </div>
       </div>
+    </section>
+
+    <section class="vhs-gallery">  
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476047" target="_blank">
+            <img src="../../images/vhs/6.-Second-Birthday-Party-th.jpg" alt="Carry On Kinky Gerlinky">
+          </a>
+          <h2>Carry On Kinky Gerlinky</h2>
+          <p><strong>10th June 1991</strong><br>Empire Ballroom, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Performers:</em> The Dairy Queen, Sheila Tequila, Maria Malapasta, Al Bolin, Stella Stein, Princess Julia, 3 Pleased Wimmin, Tasty Tim</p>
+          <p><em>Also featuring:</em> Connie, Dareena, Stephanie, Stella, Babs, Loretta, Mary, Vanessa, Dina B, Ms Cabaret</p>
+        </div>
       
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476058" target="_blank">
-          <img src="../../images/vhs/19.-Krazy-Kristmas-Maskera.jpg" alt="Krazy Kristmas Mask'Erade">
-        </a>
-        <h2>Krazy Kristmas Mask'Erade</h2>
-        <p><strong>7th December 1992</strong><br>Equinox Disco-Tec, Empire, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Compered by:</em> Winston</p>
-        <p><em>Performers:</em> Roy, Maur Vallance, Lola & Max, 300 Degrees, Climax Boys</p>
-      </div>
+        <div class="vhs-stills">
+          <img src="../../images/KG/06SecondBirthdayParty/01 Rachel and Martin Confusion.jpg" alt="Carry On still 1">
+          <img src="../../images/KG/06SecondBirthdayParty/02 Transformer.jpg" alt="Carry On still 2">
+          <img src="../../images/KG/06SecondBirthdayParty/03 Linda Evangalista.jpg" alt="Carry On still 3">
+          <img src="../../images/KG/06SecondBirthdayParty/04 james and michael.jpg" alt="Carry On still 4">
+          <img src="../../images/KG/06SecondBirthdayParty/05 dance floor.jpg" alt="Carry On still 5">
+          <img src="../../images/KG/06SecondBirthdayParty/06 old Bill.jpg" alt="Carry On still 6">
+        </div>
+      </div>  
+    </section>
+
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476048" target="_blank">
+            <img src="../../images/vhs/7.-Hot-Pants-Party-thumb.jpg" alt="Super Summer Hot Pants Party">
+          </a>
+          <h2>Super Summer Hot Pants Party</h2>
+          <p><strong>15th July 1991</strong><br>Empire Ballroom, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Compered by:</em> Winston</p>
+          <p><em>Performers:</em> West India Company, M.C.Kinky, Trindy 4</p>
+        </div>
       
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476059" target="_blank">
-          <img src="../../images/vhs/20.Carnaval-Do-Brasil-93-tn.jpg" alt="Carnaval Do Brasil 93">
-        </a>
-        <h2>Carnaval Do Brasil 93</h2>
-        <p><strong>26th April 1993</strong><br>Equinox Disco-Tec, Empire, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Compered by:</em> Winston</p>
-        <p><em>Performers:</em> Capoeira Display, Yes Brasil, London School Of Samba</p>
-        <p><em>Carnaval Catwalk Competition:</em> Best Carmen Miranda, Most Spectacular Headdress, Sexiest Carnaval Costume, Bandas (teams, 3 or more)</p>
+        <div class="vhs-stills">
+          <img src="../../images/KG/07 Hot Pants jpgs copy/01 Gerlinde & Rachel.jpg" alt="Hot Pants still 1">
+          <img src="../../images/KG/07 Hot Pants jpgs copy/02 Unknown Queen.jpg" alt="Hot Pants still 2">
+          <img src="../../images/KG/07 Hot Pants jpgs copy/03 MC Kinky.jpg" alt="Hot Pants still 3">
+          <img src="../../images/KG/07 Hot Pants jpgs copy/04 threesome.jpg" alt="Hot Pants still 4">
+          <img src="../../images/KG/07 Hot Pants jpgs copy/05 Leigh.jpg" alt="Hot Pants still 5">
+          <img src="../../images/KG/07 Hot Pants jpgs copy/06.jpg" alt="Hot Pants still 6">
+        </div>
       </div>
+    </section>
+
+    <section class="vhs-gallery">  
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476049" target="_blank">
+            <img src="../../images/vhs/8.-Dazzle-Ball-thumb.jpg" alt="Dazzle Ball">
+          </a>
+          <h2>Dazzle Ball</h2>
+          <p><strong>26th August 1991</strong><br>Empire Ballroom, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Compered by:</em> Winston</p>
+          <p><em>Performers:</em> Sheep On Drugs, Neneh Cherry, M.C.Kinky, Boy George, Nina Hagen, Sinead O'Connor, Nick Kamen, Martina Mega Climax, S Express</p>
+        </div>
       
-      <div class="vhs-item">
-        <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476060" target="_blank">
-          <img src="../../images/vhs/21.Planet-Kinky-tn.jpg" alt="Planet Kinky">
-        </a>
-        <h2>Planet Kinky</h2>
-        <p><strong>21st October 1993</strong><br>Equinox Disco-Tec, Empire, Leicester Square</p>
-        <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
-        <p><em>Compered by:</em> Winston</p>
-        <p><em>Performers:</em> Slash, People From Space</p>
-        <p><em>Theme:</em> Interplanetary Catwalk Competition</p>
+        <div class="vhs-stills">
+          <img src="../../images/KG/08 Dazzle jpgs copy/01 S Express .jpg" alt="Dazzle Ball still 1">
+          <img src="../../images/KG/08 Dazzle jpgs copy/02 Nina Hagen.jpg" alt="Dazzle Ball still 2">
+          <img src="../../images/KG/08 Dazzle jpgs copy/03 Leigh & Caron.jpg" alt="Dazzle Ball still 3">
+          <img src="../../images/KG/08 Dazzle jpgs copy/04 Pam.jpg" alt="Dazzle Ball still 4">
+          <img src="../../images/KG/08 Dazzle jpgs copy/05 pleased women.jpg" alt="Dazzle Ball still 5">
+          <img src="../../images/KG/08 Dazzle jpgs copy/06 Sinade.jpg" alt="Dazzle Ball still 6">
+        </div>
       </div>
+    </section>
+
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476044" target="_blank">
+            <img src="../../images/vhs/9.-Label-Queens-thumb.jpg" alt="Label Queens">
+          </a>
+          <h2>Label Queens</h2>
+          <p><strong>10th October 1991</strong><br>Empire Ballroom, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Compered by:</em> Winston</p>
+          <p><em>Theme:</em> From Selfridge to Schiaparelli, Balenciaga to Boy</p>
+        </div>
+      
+        <div class="vhs-stills">
+          <img src="../../images/KG/09/01 Naomi & Winston.jpg" alt="Label Queens still 1">
+          <img src="../../images/KG/09/02 Nude TV presenter.jpg" alt="Label Queens still 2">
+          <img src="../../images/KG/09/03 MC Kinky.jpg" alt="Label Queens still 3">
+          <img src="../../images/KG/09/04 Thunder Pussy.jpg" alt="Label Queens still 4">
+          <img src="../../images/KG/09/05 catwalk .jpg" alt="Label Queens still 5">
+          <img src="../../images/KG/09/06 Julia and Rachel.jpg" alt="Label Queens still 6">
+        </div>
+      </div>
+    </section>
+
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476045" target="_blank">
+            <img src="../../images/vhs/10.-Exposed-!-thumb.jpg" alt="Exposed">
+          </a>
+          <h2>Exposed</h2>
+          <p><strong>11th November 1991</strong><br>Empire Ballroom, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Compered by:</em> Winston</p>
+          <p><em>Performers:</em> Cicero, Eve Gallagher, Ru Paul, Jayne County</p>
+        </div>
+      
+        <div class="vhs-stills">
+          <img src="../../images/KG/10/01 Eve Gallagher.jpg" alt="Exposed still 1">
+          <img src="../../images/KG/10/02 .jpg" alt="Exposed still 2">
+          <img src="../../images/KG/10/03 .jpg" alt="Exposed still 3">
+          <img src="../../images/KG/10/04 Darreena.jpg" alt="Exposed still 4">
+          <img src="../../images/KG/10/05 Maur Vallance.jpg" alt="Exposed still 5">
+          <img src="../../images/KG/10/06.jpg" alt="Exposed still 6">
+        </div>
+      </div>
+    </section>
+
+
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476045" target="_blank">
+            <img src="../../images/vhs/10.-Exposed-!-thumb.jpg" alt="Exposed">
+          </a>
+          <h2>Exposed</h2>
+          <p><strong>11th November 1991</strong><br>Empire Ballroom, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Compered by:</em> Winston</p>
+          <p><em>Performers:</em> Cicero, Eve Gallagher, Ru Paul, Jayne County</p>
+        </div>
+      
+        <div class="vhs-stills">
+          <img src="../../images/KG/11/01 David Cabaret Litchenstein.jpg" alt="Exposed still 1">
+          <img src="../../images/KG/11/02 Les Child.jpg" alt="Exposed still 2">
+          <img src="../../images/KG/11/03 Dean and Inner tube man.jpg" alt="Exposed still 3">
+          <img src="../../images/KG/11/04 dance floor .jpg" alt="Exposed still 4">
+          <img src="../../images/KG/11/05 dance floor pouting.jpg" alt="Exposed still 5">
+          <img src="../../images/KG/11/06 by dance floor .jpg" alt="Exposed still 6">
+        </div>
+      </div>
+    </section>
+
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476051" target="_blank">
+            <img src="../../images/vhs/12.-Night-Of-The-Leopards-t.jpg" alt="Night Of The Leopards">
+          </a>
+          <h2>Night Of The Leopards</h2>
+          <p><strong>20th January 1992</strong><br>Empire Ballroom, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Compered by:</em> Winston</p>
+          <p><em>Performers:</em> People Get Ready, Enerjenic, Pippa, M.C.Kinky, Sexposure</p>
+          <p><em>Catwalk Show Categories:</em> Amazon Women, Beast Master, Jungle Queen, Tarzan & Jane, Witch Doctors</p>
+        </div>
+      
+        <div class="vhs-stills">
+          <img src="../../images/KG/12 leopard jpgs copy/01 Gerlinda, Pam & Rachel.jpg" alt="Night Of The Leopards still 1">
+          <img src="../../images/KG/12 leopard jpgs copy/02 Sexposure.jpg" alt="Night Of The Leopards still 2">
+          <img src="../../images/KG/12 leopard jpgs copy/03 Leopards Winston.jpg" alt="Night Of The Leopards still 3">
+          <img src="../../images/KG/12 leopard jpgs copy/04 People Get Ready.jpg" alt="Night Of The Leopards still 4">
+          <img src="../../images/KG/12 leopard jpgs copy/05 Transformer at leopards.jpg" alt="Night Of The Leopards still 5">
+          <img src="../../images/KG/12 leopard jpgs copy/06 Miss Katy Puckrik and Anthony Price.jpg" alt="Night Of The Leopards still 6">
+        </div>
+      </div>
+    </section>
+
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476052" target="_blank">
+            <img src="../../images/vhs/13.-Coach-Trip-To-Hacienda-.jpg" alt="Flesh Presents Kinky Gerlinky">
+          </a>
+          <h2>Flesh Presents Kinky Gerlinky</h2>
+          <p><strong>20th April 1992</strong><br>Fac 51 Haçienda, Manchester</p>
+          <p><em>DJ's:</em> Tim, Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Compered by:</em> Winston</p>
+          <p><em>Performers:</em> Maur Vallance, Sexposure, Sheila Tequila, Roy, 300 Degrees</p>
+          <p><em>Theme:</em> Serious exhibitionism for Dykes and Queers</p>
+        </div>
+      
+        <div class="vhs-stills">
+          <img src="../../images/KG/13 coach jpgs copy/01. coach.jpg" alt="Flesh Presents still 1">
+          <img src="../../images/KG/13 coach jpgs copy/02 coach back stage 2.jpg" alt="Flesh Presents still 2">
+          <img src="../../images/KG/13 coach jpgs copy/03 coach Hacienda stage 4.jpg" alt="Flesh Presents still 3">
+          <img src="../../images/KG/13 coach jpgs copy/04 coach 300 degrees stage.jpg" alt="Flesh Presents still 4">
+          <img src="../../images/KG/13 coach jpgs copy/05 coach Hacienda stage 6.jpg" alt="Flesh Presents still 5">
+          <img src="../../images/KG/13 coach jpgs copy/06 coach Hacienda stage 2.jpg" alt="Flesh Presents still 6">
+        </div>
+      </div>
+    </section>
+
+
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476053" target="_blank">
+            <img src="../../images/vhs/14-Carnival-Do-Brasil-thumb.jpg" alt="Carnaval Do Brasil 92">
+          </a>
+          <h2>Carnaval Do Brasil</h2>
+          <p><strong>1st June 1992</strong><br>Equinox Disco-Tec, Empire, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Compered by:</em> Winston</p>
+          <p><em>Performers:</em> Yes Brasil, London School Of Samba</p>
+          <p><em>Carnaval Catwalk Competition:</em> Best Carmen, Most Spectacular Headdress, Sexiest Costume, Bandas (teams, groups or more)</p>
+        </div>
+      
+        <div class="vhs-stills">
+          <img src="../../images/KG/14/01 George Carn do Brasil.jpg" alt="Carnaval Do Brasil still 1">
+          <img src="../../images/KG/14/02 Ulla Larson.jpg" alt="Carnaval Do Brasil still 2">
+          <img src="../../images/KG/14/03 Wilfreda.jpg" alt="Carnaval Do Brasil still 3">
+          <img src="../../images/KG/14/04 Brasilian.jpg" alt="Carnaval Do Brasil still 4">
+          <img src="../../images/KG/14/05 Sexposure.jpg" alt="Carnaval Do Brasil still 5">
+          <img src="../../images/KG/14/06 Rachel.jpg" alt="Carnaval Do Brasil still 6">
+        </div>
+      </div>
+    </section>
+      
+
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476054" target="_blank">
+            <img src="../../images/vhs/15.Groovy-Garden-Party-thum.jpg" alt="Kinky's Groovy Garden Party">
+          </a>
+          <h2>Kinky's Groovy Garden Party</h2>
+          <p><strong>20th July 1992</strong><br>Equinox Disco-Tec, Empire, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Compered by:</em> Winston</p>
+          <p><em>Performers:</em> Love and Sass, Paradise Blue, Bananarama, So Damned Tuff, Powder Puff & Lip Gloss</p>
+        </div>
+      
+        <div class="vhs-stills">
+          <img src="../../images/KG/15/01 Bananarama copy.jpg" alt="Groovy Garden Party still 1">
+          <img src="../../images/KG/15/02 Screen Shot 2022-10-13 at 20.15.34.jpg" alt="Groovy Garden Party still 2">
+          <img src="../../images/KG/15/03 Dead or Alive Pete Burns 7.jpg" alt="Groovy Garden Party still 3">
+          <img src="../../images/KG/15/04 300 Degrees.jpg" alt="Groovy Garden Party still 4">
+          <img src="../../images/KG/15/05 Imagination Lee John 3 .jpg" alt="Groovy Garden Party still 5">
+          <img src="../../images/KG/15/06 Imagination Lee John 6 .jpg" alt="Groovy Garden Party still 6">
+        </div>
+      </div>
+    </section>
+      
+
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476055" target="_blank">
+            <img src="../../images/vhs/16.-Night-Of--A-1000-Stars-.jpg" alt="Night Of A Thousand Stars">
+          </a>
+          <h2>Night Of A Thousand Stars</h2>
+          <p><strong>31st August 1992</strong><br>Equinox Disco-Tec, Empire, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Compered by:</em> Winston</p>
+          <p><em>Performers:</em> M.C.Kinky, Adamski, Boy George, Amanda Lear, Madame JoJo</p>
+        </div>
+      
+        <div class="vhs-stills">
+          <img src="../../images/KG/16/01 Amanda 9 .jpg" alt="Night Of A Thousand Stars still 1">
+          <img src="../../images/KG/16/02 Adamski crop.jpg" alt="Night Of A Thousand Stars still 2">
+          <img src="../../images/KG/16/03 George.jpg" alt="Night Of A Thousand Stars still 3">
+          <img src="../../images/KG/16/04 MC Kinky.jpg" alt="Night Of A Thousand Stars still 4">
+          <img src="../../images/KG/16/05 Army of Lovers.jpg" alt="Night Of A Thousand Stars still 5">
+          <img src="../../images/KG/16/06 Leigh .jpg" alt="Night Of A Thousand Stars still 6">
+        </div>
+      </div>
+    </section>
+
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476056" target="_blank">
+            <img src="../../images/vhs/17.-Sleaze-Ball-thumb.jpg" alt="Sleaze Ball">
+          </a>
+          <h2>Sleaze Ball</h2>
+          <p><strong>28th September 1992</strong><br>Equinox Disco-Tec, Empire, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Compered by:</em> Stella Stein</p>
+          <p><em>Performers:</em> Jayne County, Melonie Peel, Martina Mega Climax & The Hoarettes, Roy & Miss Manning, Jimmy Trindy & Lisa, Leigh Bowery</p>
+        </div>
+      
+        <div class="vhs-stills">
+          <img src="../../images/KG/17/01 Jayne County 1.jpg" alt="Sleaze Ball still 1">
+          <img src="../../images/KG/17/02 Leigh and Nicola.jpg" alt="Sleaze Ball still 2">
+          <img src="../../images/KG/17/03 Melanie Peel.jpg" alt="Sleaze Ball still 3">
+          <img src="../../images/KG/17/04 Roy backstage.jpg" alt="Sleaze Ball still 4">
+          <img src="../../images/KG/17/05 Leigh dancing.jpg" alt="Sleaze Ball still 5">
+          <img src="../../images/KG/17/06 loos.jpg" alt="Sleaze Ball still 6">
+        </div>
+      </div>
+    </section>
+
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476057" target="_blank">
+            <img src="../../images/vhs/18.-World-Fair-thumb.jpg" alt="World Fair">
+          </a>
+          <h2>World Fair</h2>
+          <p><strong>9th November 1992</strong><br>Equinox Disco-Tec, Empire, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Compered by:</em> Winston</p>
+          <p><em>Theme:</em> Parade Of Nations Catwalk Competition</p>
+          <p><em>Description:</em> Savage pageantry… entirely unstaged and unrehearsed. You must believe your eyes — incredible as it may seem.</p>
+        </div>
+      
+        <div class="vhs-stills">
+          <img src="../../images/KG/18/01 world fair .jpg" alt="World Fair still 1">
+          <img src="../../images/KG/18/02 The Judges.jpg" alt="World Fair still 2">
+          <img src="../../images/KG/18/03 Leigh.jpg" alt="World Fair still 3">
+          <img src="../../images/KG/18/04 world fair still5.jpg" alt="World Fair still 4">
+          <img src="../../images/KG/18/05 world fair dance floor.jpg" alt="World Fair still 5">
+          <img src="../../images/KG/18/06 Wilfreda More Vallance.jpg" alt="World Fair still 6">
+        </div>
+      </div>
+    </section>
+      
+
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476058" target="_blank">
+            <img src="../../images/vhs/19.-Krazy-Kristmas-Maskera.jpg" alt="Krazy Kristmas Mask'Erade">
+          </a>
+          <h2>Krazy Kristmas Mask'Erade</h2>
+          <p><strong>7th December 1992</strong><br>Equinox Disco-Tec, Empire, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Compered by:</em> Winston</p>
+          <p><em>Performers:</em> Roy, Maur Vallance, Lola & Max, 300 Degrees, Climax Boys</p>
+        </div>
+
+        <div class="vhs-stills">
+          <img src="../../images/KG/19/01 Kris Mask dance floor.jpg" alt="Krazy Kristmas still 1">
+          <img src="../../images/KG/19/02 Get Kinky at Home.jpg" alt="Krazy Kristmas still 2">
+          <img src="../../images/KG/19/03 Kris Mask dance floor 6.jpg" alt="Krazy Kristmas still 3">
+          <img src="../../images/KG/19/04 Suzie 3.jpg" alt="Krazy Kristmas still 4">
+          <img src="../../images/KG/19/05 Kris Mask dance floor.jpg" alt="Krazy Kristmas still 5">
+          <img src="../../images/KG/19/06 Kris Mask dance floor 4atiff.jpg" alt="Krazy Kristmas still 6">
+        </div>
+      </div>
+    </section>
+      
+
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476059" target="_blank">
+            <img src="../../images/vhs/20.Carnaval-Do-Brasil-93-tn.jpg" alt="Carnaval Do Brasil 93">
+          </a>
+          <h2>Carnaval Do Brasil 93</h2>
+          <p><strong>26th April 1993</strong><br>Equinox Disco-Tec, Empire, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Compered by:</em> Winston</p>
+          <p><em>Performers:</em> Capoeira Display, Yes Brasil, London School Of Samba</p>
+          <p><em>Carnaval Catwalk Competition:</em> Best Carmen Miranda, Most Spectacular Headdress, Sexiest Carnaval Costume, Bandas (teams, 3 or more)</p>
+        </div>
+      
+        <div class="vhs-stills">
+          <img src="../../images/KG/20/01 Winston comperes.jpg" alt="Carnaval Do Brasil 93 still 1">
+          <img src="../../images/KG/20/02 Yes Brasil.jpg" alt="Carnaval Do Brasil 93 still 2">
+          <img src="../../images/KG/20/03 London School of Samba.jpg" alt="Carnaval Do Brasil 93 still 3">
+          <img src="../../images/KG/20/04 Julio carn do B 4.jpg" alt="Carnaval Do Brasil 93 still 4">
+          <img src="../../images/KG/20/05 Amanda Lear 2.jpg" alt="Carnaval Do Brasil 93 still 5">
+          <img src="../../images/KG/20/06 Pop corn catwalk.jpg" alt="Carnaval Do Brasil 93 still 6">
+        </div>
+      </div>
+    </section>
+     
+    <section class="vhs-gallery">
+      <div class="vhs-block">
+        <div class="vhs-item">
+          <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6476060" target="_blank">
+            <img src="../../images/vhs/21.Planet-Kinky-tn.jpg" alt="Planet Kinky">
+          </a>
+          <h2>Planet Kinky</h2>
+          <p><strong>21st October 1993</strong><br>Equinox Disco-Tec, Empire, Leicester Square</p>
+          <p><em>Music from:</em> Princess Julia, Martin Confusion, Rachel Auburn</p>
+          <p><em>Compered by:</em> Winston</p>
+          <p><em>Performers:</em> Slash, People From Space</p>
+          <p><em>Theme:</em> Interplanetary Catwalk Competition</p>
+        </div>
+      
+        <div class="vhs-stills">
+          <img src="../../images/KG/21/01 Performer.jpg" alt="Planet Kinky still 1">
+          <img src="../../images/KG/21/02 Performer 2.jpg" alt="Planet Kinky still 2">
+          <img src="../../images/KG/21/03 Planet crowd.jpg" alt="Planet Kinky still 3">
+          <img src="../../images/KG/21/04 winner3.jpg" alt="Planet Kinky still 4">
+          <img src="../../images/KG/21/05 Nicola and Christina.jpg" alt="Planet Kinky still 5">
+          <img src="../../images/KG/21/06 Max .jpg" alt="Planet Kinky still 6">
+        </div>
+      </div>
+    </section>
       
   </div>
   <script src="../../js/index.js"></script>

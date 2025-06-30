@@ -451,6 +451,11 @@ body {
     text-align: center;
   }
 
+  @media (max-width: 768px) {
+    .video-gallery {
+      padding: 0 1rem; /* or increase to 1.5rem / 2rem as needed */
+    }
+  }
   
 /* mobile responsive: stack gallery and screenings */
 @media (max-width: 768px) {
