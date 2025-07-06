@@ -5,6 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kinky Gerlinky – Buy DVD</title>
   <link rel="stylesheet" href="../../css/styles.css" />
+  <style>
+    .vhs-stills {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* Mobile: 2 per row */
+      gap: 0.5rem;
+    }
+
+    .vhs-stills img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      max-width: 100%;
+    }
+
+    /* Center the last image on mobile if it's alone */
+    .vhs-stills img:nth-child(9) {
+      grid-column: 1 / -1; /* Span both columns */
+      justify-self: center;
+      width: 50%; /* Optional: reduce width slightly so it looks nicely centered */
+    }
+
+    @media (min-width: 768px) {
+      .vhs-stills {
+        grid-template-columns: repeat(3, 1fr); /* Desktop: 3 per row */
+        grid-template-rows: repeat(3, 1fr);
+      }
+
+      .vhs-stills img:nth-child(9) {
+        grid-column: auto;
+        justify-self: auto;
+        width: 100%;
+      }
+    }
+
+
+  </style>
 </head>
 <body>
   <nav class="navbar">
@@ -50,29 +87,32 @@
     <p>Edited from over 200 hours shot on 21 nights to convey the experience of one full-on night out at the club.</p>
     <p>Featuring Karen O Conner, The Pleased Wimmin, Roberta Close, Carnival Do Brasil, Melonie Peel, Amanda Lear, MC Kinky, Boy George, A massive catwalk competition (Judges include Jean Paul Gaultier, Vivienne Westwood & Jay Davison) & Leigh Bowery</p>
     <div class="dvd-purchase-options">
-
-
       <div class="trailer-video">
         <a href="https://vimeo.com/checkout/ondemand?action=rent&product=6776950&player=1" target="_blank">
           <img
-            src="../../images/films/KGcover(fuck)thumb.jpg""
+            src="../../images/films/KGcover(fuck)thumb.jpg"
             width="420"
             height="420"
-          ></img>
+            alt="Kinky Gerlinky DVD cover"
+          />
         </a>
         <p><em>Click image to watch the film</em></p>
-
-        <p>
-          <strong>
-            <em>
-              <a href="https://vimeo.com/ondemand/kinkygerlinkyseries" style="text-decoration: none;" target="_blank">
-                Click here to bargain binge the entire series for a month
-              </a>
-            </em>
-          </strong>
-        </p>
-
       </div>
+    </div>
+    
+    <div class="vhs-stills">
+      <img src="../../images/KG/VHS/01 Gerlinde, Pam and Rachel.jpg" alt="Kinky Gerlinky still" />
+      <img src="../../images/KG/VHS/02 KG .jpg" alt="Kinky Gerlinky still" />
+      <img src="../../images/KG/VHS/03 John Pleased Women.jpg" alt="Kinky Gerlinky still" />
+      <img src="../../images/KG/VHS/04 Lee C .jpg" alt="Kinky Gerlinky still" />
+      <img src="../../images/KG/VHS/05 Leigh 2.jpg" alt="Kinky Gerlinky still" />
+      <img src="../../images/KG/VHS/06 Gary Mughler.jpg" alt="Kinky Gerlinky still" />
+      <img src="../../images/KG/VHS/07 bananas.jpg" alt="Kinky Gerlinky still" />
+      <img src="../../images/KG/VHS/08 Sheila Tequila.jpg" alt="Kinky Gerlinky still" />
+      <img src="../../images/KG/VHS/09 tube station.jpg" alt="Kinky Gerlinky still" />
+    </div>
+    
+
 
   </section>
 
