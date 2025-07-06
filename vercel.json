@@ -1,0 +1,16 @@
+{
+    "redirects": [
+      { "source": "/films.html", "destination": "/pages/films.html", "permanent": true },
+      { "source": "/found-photos.html", "destination": "/pages/found-photos.html", "permanent": true },
+      { "source": "/photos.html", "destination": "/pages/photos.html", "permanent": true },
+      { "source": "/prints.html", "destination": "/pages/prints.html", "permanent": true },
+      { "source": "/shows.html", "destination": "/pages/shows.html", "permanent": true },
+      { "source": "/contact.html", "destination": "/pages/contact.html", "permanent": true },
+      { "source": "/commercial.html", "destination": "/pages/commercial.html", "permanent": true },
+      { "source": "/jewells.html", "destination": "/pages/jewells.html", "permanent": true },
+      { "source": "/montages.html", "destination": "/pages/montages.html", "permanent": true },
+      { "source": "/the-box.html", "destination": "/pages/the-box.html", "permanent": true },
+      { "source": "/books.html", "destination": "/pages/books.html", "permanent": true }
+    ]
+  }
+  

@@ -39,7 +39,7 @@
   </section>
 
   <section class="films-grid">
-    <div class="film-card">
+    <!-- <div class="film-card">
       <a href="./frameset/frameset.html">
         <img src="../images/films/KGcover(fuck)thumb.jpg" alt="Kinky Gerlinky" class="default-img" />
         <div class="film-info">
@@ -47,7 +47,7 @@
           <p>2003 — 101 minutes</p>
         </div>
       </a>
-    </div>
+    </div> -->
   
     <div class="film-card hover-image">
       <a href="./films/headcases.html">
@@ -203,7 +203,6 @@
         </div>
       </a>
     </div>
-
   </section>
   
 
@@ -211,6 +210,33 @@
     <p>© Dick Jewell</p>
   </footer>
   <script src="../js/index.js"></script>
-
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.querySelector(".films-grid");
+      const cards = Array.from(container.querySelectorAll(".film-card"));
+  
+      const getYearFromCard = (card) => {
+        const info = card.querySelector(".film-info p");
+        if (!info) return null;
+        const match = info.textContent.match(/\b(19|20)\d{2}\b/);
+        return match ? parseInt(match[0], 10) : null;
+      };
+  
+      const sortedCards = cards.sort((a, b) => {
+        const yearA = getYearFromCard(a);
+        const yearB = getYearFromCard(b);
+  
+        if (yearA === null && yearB === null) return 0;
+        if (yearA === null) return 1;
+        if (yearB === null) return -1;
+  
+        return yearA - yearB;
+      });
+  
+      // Re-append sorted cards
+      sortedCards.forEach(card => container.appendChild(card));
+    });
+  </script>
+  
 </body>
 </html>
