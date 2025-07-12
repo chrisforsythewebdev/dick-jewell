@@ -85,6 +85,29 @@
     </figure>
   </div>
 
+
+  <h2>Found Photos 1978 - 1980</h2>
+  <p class="intro">Photolithographs and Varnish in frames 2015 (47 x 58 cm) framed</p>
+
+  <section class="photo-carousel second-carousel" style="margin-bottom: 20px;">
+    <div class="carousel-frame">
+      <img id="carouselImage2" src="../images/found-photos/high res/2015 Found Photo 1 framed.jpg" alt="Photobooth Carousel Image">
+    </div>
+  
+    <div class="carousel-controls">
+      <button class="carousel-btn prev2" aria-label="Previous image">
+        <img src="../images/arrows-etc/point-back.jpg" alt="Back">
+      </button>
+  
+      <button class="carousel-btn next2" aria-label="Next image">
+        <img src="../images/arrows-etc/point-forward.jpg" alt="Next">
+      </button>
+    </div>
+  </section>
+  
+
+
+
   <!-- Row of 3 videos -->
   <div class="video-row">
     <div class="video-block">
@@ -234,6 +257,35 @@
       index = (index - 1 + images.length) % images.length;
       carouselImage.src = images[index];
     });
+
+    const images2 = [
+    "../images/found-photos/high res/2015 Found Photo 1 framed.jpg",
+    "../images/found-photos/high res/2015 Found Photo 2 framed.jpg",
+    "../images/found-photos/high res/2015 Found Photo 3 framed.jpg",
+    "../images/found-photos/high res/2015 Found Photo 4 framed.jpg",
+    "../images/found-photos/high res/2015 Found Photo 5 framed.jpg",
+    "../images/found-photos/high res/2015 Found Photo 6 framed.jpg",
+    "../images/found-photos/high res/2015 Found Photo 7 framed .jpg",
+    "../images/found-photos/high res/2015 Found Photo 8 framed.jpg",
+    "../images/found-photos/high res/2015 Found Photo 9 framed.jpg",
+    "../images/found-photos/high res/2015 Found Photo 10 framed.jpg",
+  ];
+
+  let index2 = 0;
+  const carouselImage2 = document.getElementById('carouselImage2');
+  const nextBtn2 = document.querySelector('.carousel-btn.next2');
+  const prevBtn2 = document.querySelector('.carousel-btn.prev2');
+
+  nextBtn2.addEventListener('click', () => {
+    index2 = (index2 + 1) % images2.length;
+    carouselImage2.src = images2[index2];
+  });
+
+  prevBtn2.addEventListener('click', () => {
+    index2 = (index2 - 1 + images2.length) % images2.length;
+    carouselImage2.src = images2[index2];
+  });
+
 </script>
 <script src="../js/index.js"></script>
 
