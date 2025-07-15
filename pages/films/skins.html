@@ -21,7 +21,10 @@
     .video-wrapper {
       position: relative;
       padding-top: 56.25%;
-      margin: 2rem 0;
+      margin: 2rem auto; /* center horizontally */
+      width: 100%;
+      max-width: 1000px; /* match the page width */
+      box-sizing: border-box;
     }
 
     .video-wrapper iframe {

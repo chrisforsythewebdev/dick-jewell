@@ -719,7 +719,7 @@ body {
   .prints-grid {
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(auto-i, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     justify-content: stretch;
   }
   
@@ -944,10 +944,6 @@ body {
     max-width: 100%;
   }
   
-  .the-box img {
-    width: 69%;
-  }
-  
   .found-photos img {
     width: 85%;
   }
@@ -957,10 +953,22 @@ body {
     height: 600px;
   }
 
-  .box-hamburg img {
-    margin-top: 1em;
-    width: 675px;
+  .the-box {
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.5rem; /* adds margin on sides for small screens */
+    box-sizing: border-box;
   }
+  
+  .the-box img {
+    margin-top: 1em;
+    width: 100%;
+    max-width: 675px;
+    object-fit: contain;
+    display: block;
+  }  
 
   figure {
     margin: 0;
@@ -1104,13 +1112,6 @@ figcaption {
   box-sizing: border-box;
 }
 
-.video-wrapper iframe {
-  width: 100%;
-  height: 320px;
-  max-width: 640px; 
-  margin: 0 auto;
-  display: block;
-}
 
 .large-media-block {
   margin: 2rem auto;
