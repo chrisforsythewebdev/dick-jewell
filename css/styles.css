@@ -309,15 +309,6 @@ body {
   }
   
   
-  /* .films-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-  } */
-
   .films-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -368,7 +359,24 @@ body {
     object-fit: contain;
   }
   
-
+  @media (max-width: 768px) {
+    .film-card-image-wrapper {
+      height: auto;           
+      aspect-ratio: auto; 
+      padding: 0;             
+    }
+  
+    .film-card-image-wrapper img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  
+    .film-card {
+      padding: 10px 0; 
+    }
+  }
+  
   .aspect-16-9 {
     aspect-ratio: 16 / 9;
     width: 100%;
