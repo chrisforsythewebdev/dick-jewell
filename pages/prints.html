@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dick Jewell – Films</title>
   <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" href="../images/arrows-etc/point-up.jpg" type="image/jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     .print-page-gallery {
       margin-top: 2.5rem;
@@ -40,8 +42,18 @@
       grid-column: 1 / -1;
     }
 
+    .print-page-item.medium {
+      grid-column: span 2;
+    }
+
+    @media (max-width: 768px) {
+      .print-page-item.medium {
+        grid-column: span 1;
+      }
+    }
+
     .print-page-item.wide img {
-      height: 400px;
+      height: 290px;
     }
 
     /* Override for manual alignment */
@@ -183,6 +195,14 @@
             <p>Inkjet print on silver paper 2018</p>
           </div>
         </a>
+
+        <a href="prints/londonSnog.html" class="print-page-item medium">
+          <img src="../images/prints/London-Snog.-.jpg" alt="London Snog">
+          <div class="print-meta">
+            <h2>London Snog</h2>
+            <p>Video still montage / light jet print 1988</p>
+          </div>
+        </a>
     
         <a href="prints/theLastSupper.html" class="print-page-item wide">
           <img src="../images/prints/Last Supper .jpg" alt="The Last Supper On The League Table">
@@ -240,13 +260,6 @@
           </div>
         </a>
     
-        <a href="prints/londonSnog.html" class="print-page-item wide">
-          <img src="../images/prints/London-Snog.-.jpg" alt="London Snog">
-          <div class="print-meta">
-            <h2>London Snog</h2>
-            <p>Video still montage / light jet print 1988</p>
-          </div>
-        </a>
     
         <a href="prints/youngTongue.html" class="print-page-item align-left">
           <img src="../images/prints/Young-Tongue-thumb.jpg" alt="Young Tongue">
@@ -320,7 +333,7 @@
           </div>
         </a>
     
-        <a href="prints/750-mug-shots.html" class="print-page-item wide">
+        <a href="prints/750-mug-shots.html" class="print-page-item">
           <img src="../images/prints/_750-mug-shots-(a-portrait-.jpg" alt="750 Mug Shots (A Portrait of a Nation)">
           <div class="print-meta">
             <h2>750 Mug Shots (A Portrait of a Nation)</h2>
@@ -341,6 +354,14 @@
           <div class="print-meta">
             <h2>After “The Fight Between Carnival and Lent” by Pieter Breugel The Elder</h2>
             <p>Inkjet &amp; varnish print 2010</p>
+          </div>
+        </a>
+
+        <a href="prints/shakespeare.html" class="print-page-item">
+          <img src="../images/prints/Shakespeare the Complete Works.jpg" alt="shakespeare">
+          <div class="print-meta">
+            <h2>Shakespeare the Complete Works</h2>
+            <p>Photolithograph 2011</p>
           </div>
         </a>
         
@@ -393,7 +414,7 @@
         </a>
 
         <a href="prints/one-blood.html" class="print-page-item">
-          <img src="../images/prints/One Blood detail.jpg" alt="one blood">
+          <img src="../images/prints/One Blood small.jpg" alt="one blood">
           <div class="print-meta">
             <h2>One Blood</h2>
             <p>Inket print 2022</p>
@@ -416,21 +437,15 @@
           </div>
         </a>
 
-        <a href="prints/mona-lisa.html" class="print-page-item wide">
-          <img src="../images/prints/Mona-Lisa-private-view.jpg" alt="mixed-messaging">
+        <a href="prints/mona-lisa.html" class="print-page-item medium">
+          <img src="../images/prints/Mona-Lisa-private-view.jpg" alt="mona lisa">
           <div class="print-meta">
             <h2>Mona Lisa Private View at the Royal Academy</h2>
             <p>Inket print 2024</p>
           </div>
         </a>
 
-        <a href="prints/shakespeare.html" class="print-page-item">
-          <img src="../images/prints/Shakespeare the Complete Works.jpg" alt="mixed-messaging">
-          <div class="print-meta">
-            <h2>Shakespeare the Complete Works</h2>
-            <p>Photolithograph 2011</p>
-          </div>
-        </a>
+
       </div>
     </main>
     
@@ -440,28 +455,30 @@
     </footer>
     <script src="../js/index.js"></script>
     <script>
+      console.log('helo?');
       document.addEventListener("DOMContentLoaded", function () {
-        const grid = document.querySelector(".prints-grid");
-        const items = Array.from(grid.querySelectorAll(".print-item"));
+        const grid = document.querySelector(".print-page-grid");
+        if (!grid) return;
+    
+        const items = Array.from(grid.querySelectorAll(".print-page-item"));
     
         items.sort((a, b) => {
-          // Extract years from the text content
-          const yearA = extractYear(a.textContent);
-          const yearB = extractYear(b.textContent);
-    
-          return yearA - yearB;
+          const yearA = extractYear(a);
+          const yearB = extractYear(b);
+          return yearA - yearB; 
         });
     
-        // Clear the grid and re-append sorted items
         grid.innerHTML = "";
         items.forEach(item => grid.appendChild(item));
       });
     
-      function extractYear(text) {
-        const match = text.match(/(19|20)\d{2}/);
+      function extractYear(item) {
+        const yearText = item.querySelector(".print-meta p")?.textContent || "";
+        const match = yearText.match(/(19|20)\d{2}/);
         return match ? parseInt(match[0], 10) : 0;
       }
-    </script>    
+    </script>
+     
 
 </body>
 </html>
