@@ -145,7 +145,7 @@ body {
       transform: translateY(-100%);
       transition: transform 0.4s ease;
       z-index: 1000;
-      padding-top: 100px; /* space for burger */
+      padding-top: 50px; /* space for burger */
       padding-bottom: 20px;
       overflow-y: auto; /* enable scrolling */
       -webkit-overflow-scrolling: touch;
@@ -174,7 +174,6 @@ body {
       display: none;
     }
   }
-  
 
   
 
