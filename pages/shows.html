@@ -62,6 +62,26 @@
       margin-top: 0.5rem;
       text-align: center;
     }
+
+    .video-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.unstable-video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-caption {
+  margin-top: 1rem;
+  text-align: center;
+  color: black;
+}
+
   </style>
 </head>
 <body>
@@ -305,13 +325,24 @@
     <section class="show">
       <h2>UNSTABLE MONUMENTS TRURO CORNWALL 2016</h2>
       <div class="carousel" data-carousel>
-        <div class="carousel-track">
+        <div class="carousel-track" style="margin-bottom: 1rem;">
           <img src="../images/shows/unstable/Unstable Monuments IMG_1837.JPG" alt="Flowers Invite" class="carousel-image">          
-          <video class="carousel-image" loop playsinline controls>
-            <source src="../images/shows/unstable/unstable-web.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+        
+          <div class="carousel-image video-slide">
+            <video id="unstable-video" playsinline controls>
+              <source src="../images/shows/unstable/unstable-web.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="video-caption">
+              <a href="../pages/films/breaks.html" target="_blank">
+                Click here to watch Rave+Breaks
+              </a>
+            </p>
+          </div>
+          
+          
         </div>
+        
         <div class="carousel-controls-original">
           <button class="carousel-btn prev" data-prev aria-label="Previous image">
             <img src="../images/arrows-etc/point-back.jpg" alt="Back">
@@ -320,12 +351,7 @@
             <img src="../images/arrows-etc/point-forward.jpg" alt="Next">
           </button>          
         </div>
-        <p style="margin-top: 1rem;">
-          <a href="../pages/films/breaks.html" target="_blank" style="text-decoration: none; color: black;">
-            Click here to watch Rave+Breaks
-          </a>
-        </p>
-        
+      
       </div>
     </section>
 

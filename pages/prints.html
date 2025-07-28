@@ -71,6 +71,16 @@
       color: black;
     }
 
+        /* Targets only the two specific items using a shared class */
+.print-page-item.center-pair {
+  grid-column: span 1;
+}
+
+.print-page-item.center-pair:nth-of-type(4) {
+  grid-column-start: 2;
+}
+
+
 
     /* Mobile: stack everything in 1 column */
     @media (max-width: 768px) {
@@ -88,6 +98,15 @@
       height: 260px;
     }
     }
+
+    .print-page-row.center-pair {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      grid-column: 1 / -1; /* spans full width of grid */
+    }
+
+
 
   </style>
 </head>
@@ -332,14 +351,17 @@
             <p>Inkjet &amp; varnish 2007</p>
           </div>
         </a>
-    
-        <a href="prints/750-mug-shots.html" class="print-page-item">
+        
+        <a href="prints/750-mug-shots.html" class="print-page-item medium">
           <img src="../images/prints/_750-mug-shots-(a-portrait-.jpg" alt="750 Mug Shots (A Portrait of a Nation)">
           <div class="print-meta">
             <h2>750 Mug Shots (A Portrait of a Nation)</h2>
             <p>Inkjet print 2007</p>
           </div>
         </a>
+        
+        
+        
     
         <a href="prints/war-and-peace.html" class="print-page-item wide">
           <img src="../images/prints/War-&-Peace.jpg" alt="War and Peace">
@@ -413,7 +435,7 @@
           </div>
         </a>
 
-        <a href="prints/one-blood.html" class="print-page-item">
+        <a href="prints/one-blood.html" class="print-page-item wide">
           <img src="../images/prints/One Blood small.jpg" alt="one blood">
           <div class="print-meta">
             <h2>One Blood</h2>
